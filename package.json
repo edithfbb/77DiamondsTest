@@ -1,0 +1,12 @@
+{
+  "name": "77DiamondsTest",
+  "version": "1.0.0",
+  "description": "automation test for 77Diamonds evaluation",
+  "main": "index.js",
+  "repository": "git@github.com-pessoal:edithfbb/77DiamondsTest.git",
+  "author": "Edith Burgos",
+  "license": "MIT",
+  "devDependencies": {
+    "cypress": "^12.2.0"
+  }
+}
