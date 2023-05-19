@@ -10,25 +10,19 @@ describe('Testing all Funcionality', () => {
     })
   })
 
-  it('WebApp should be online', () => {
-
-    cy.visitPage('/', 'ecommerce-photo-upload')
-
-  })
-
-  it('Button Edit Image should be visible', () => {
+  it('TC004 - Edit Image Button should be visible', () => {
 
     cy.editItemButtonIsVisible()
 
   })
 
-  it('Edit Images Button should redirect to specifc Item Page ', () => {
+  it('TC005 - Edit Images Button should redirect to specifc Item Page ', () => {
 
     cy.itemButtonRedirect()
 
   })
 
-  it('Upload Image', () => {
+  it('TC001 - Upload Image', () => {
 
     const image = imageData.imagesData
 
