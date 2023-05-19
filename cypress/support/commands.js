@@ -1,26 +1,41 @@
+/// <reference types="cypress" />
+import 'cypress-file-upload';
 
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('visitPage', (homePage, title) => {
+    cy.visit(homePage)
+    cy.title().should('eq', title)
+})
+
+Cypress.Commands.add('editItemButtonIsVisible', () => {
+    cy.visitPage('/', 'ecommerce-photo-upload')
+    cy.get('tbody tr td a').should('be.visible')
+})
+
+Cypress.Commands.add('itemButtonRedirect', () => {
+    cy.visitPage('/', 'ecommerce-photo-upload')
+    cy.editItemButtonIsVisible()
+    cy.contains('a', 'Edit Images').should('be.visible').click()
+    cy.url().should('include', 'product-detail');
+})
+
+Cypress.Commands.add('uploadImage', (itemPath, itemName) => {
+    cy.fixture(itemPath, 'binary').then(image => {
+        const blob = Cypress.Blob.binaryStringToBlob(image, 'image/png');
+        const formData = new FormData();
+        formData.append('colorId', '2');
+        formData.append('fabricId', '2');
+        formData.append('formFile', blob, itemName);
+        formData.append('productId', '2');
+        cy.request({
+            method: 'POST',
+            url: `//api/api/Product/UploadProductImage`,
+            body: formData,
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+        }).then(response => {
+            expect(response.status).to.eq(200)
+        })
+    })
+})
