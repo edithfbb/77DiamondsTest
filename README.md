@@ -25,6 +25,9 @@ Or, run `npm run cy:open` to open Cypress in interactive mode.
 ## Report
 
 Execute `npm run test ` - will execute already saving data for the report.
-Execute `npm run allure:generate` - will generate the results folder
-Execute `npm run allure:open` - will start a server and open a web page with the results
-To clean old test files results, execute `npm run allure:clear`
+
+Execute `npm run allure:generate` - will generate the results folder.
+
+Execute `npm run allure:open` - will start a server and open a web page with the results.
+
+To clean old test files results, execute `npm run allure:clear`.
