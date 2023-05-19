@@ -1,0 +1,5 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Fri May 19 06:37:25 BRT 2023","Fri May 19 06:37:26 BRT 2023","1057","","Testing all Funcionality","","","","Edit Images Button should redirect to specifc Item Page ",""
+"passed","Fri May 19 06:37:26 BRT 2023","Fri May 19 06:37:27 BRT 2023","1328","","Testing all Funcionality","","","","Upload Image",""
+"passed","Fri May 19 06:37:24 BRT 2023","Fri May 19 06:37:25 BRT 2023","703","","Testing all Funcionality","","","","Button Edit Image should be visible",""
+"passed","Fri May 19 06:37:21 BRT 2023","Fri May 19 06:37:24 BRT 2023","2700","","Testing all Funcionality","","","","WebApp should be online",""

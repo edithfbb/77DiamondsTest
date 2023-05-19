@@ -396,3 +396,14 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+#Cypress
+.DS_Store
+cypress.env.json
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+node_modules/
+allure-results/
+report-server/
+*.mp4
